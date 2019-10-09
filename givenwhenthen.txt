@@ -1,0 +1,49 @@
+Given
+	['0001','000G','0003']
+When
+	printReceipt(['0001','000G','0003']);
+Then
+	[ERROR] Invalid Barcode
+
+************
+Given
+	000G
+When
+	validateId(000G);
+Then
+	false
+
+************
+Given
+	0001
+When
+	validateId(0001);
+Then
+	true
+
+************
+Given
+	0005
+When
+	getProductDetails(0005);
+Then
+	{id:"0005", name: "Dr Pepper", price: 7}
+
+
+************
+Given
+	['0001','0003','0005', '0003']
+When
+	printReceipt(['0001','0003','0005', '0003'])
+Then
+
+Receipts
+------------------------------------------------------------
+Coca Cola                       3          1
+Pepsi-Cola                      5          2
+Dr Pepper                       7          1
+------------------------------------------------------------
+Price: 20
+
+
+
